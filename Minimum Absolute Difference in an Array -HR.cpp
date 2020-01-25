@@ -9,7 +9,7 @@ int main()
     //double x,y,z;
     string s1,s2,temp,p;
     t=1;
-    cin>>t;
+    //cin>>t;
   vector<ll> v1;
   //map<char,ll> mp;
   n=1000001;
@@ -18,12 +18,22 @@ int main()
   //vector<int> sieve=sievefun(n);
   while(t--)
   {
+      mi=1000000002;
       
-      cin>>n>>k;
-      a=ceil(2.0*sqrt(k))-1;
-      if(a>=0&&a<=n) cout<<"YES\n";
-      else cout<<"NO\n";
-      
+      cin>>n;
+      ll arr[n];
+      for(int i=0;i<n;i++)
+      {
+          cin>>arr[i];
+      }
+      sort(arr,arr+n);
+      for(int i=n-1;i>0;i--)
+      {
+          //cout<<v1[i]<<"~"<<mi;
+          arr[i]-=arr[i-1];
+          //cout<<v1[i]<<"\n";
+      }
+      cout<<*min_element(arr+1,arr+n);
       
   }
   

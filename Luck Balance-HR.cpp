@@ -9,7 +9,7 @@ int main()
     //double x,y,z;
     string s1,s2,temp,p;
     t=1;
-    cin>>t;
+    //cin>>t;
   vector<ll> v1;
   //map<char,ll> mp;
   n=1000001;
@@ -20,10 +20,23 @@ int main()
   {
       
       cin>>n>>k;
-      a=ceil(2.0*sqrt(k))-1;
-      if(a>=0&&a<=n) cout<<"YES\n";
-      else cout<<"NO\n";
-      
+      s=0;
+      for(int i=0;i<n;i++)
+      {
+          cin>>a>>b;
+          s+=a;
+          if(b==1) v1.push_back(a);
+      }
+      if(k>=v1.size()) {cout<<s;return 0;}
+      else
+      {
+      sort(v1.begin(),v1.end());
+      for(int i=0;i<v1.size()-k;i++)
+      {
+          s-=(2*v1[i]);
+      }
+      cout<<s;
+      }
       
   }
   
