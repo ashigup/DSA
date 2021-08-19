@@ -1,0 +1,96 @@
+
+#define ll long long int
+#include <bits/stdc++.h>
+#define mod 1000000007
+using namespace std;
+ll modpow(ll a, ll b)
+{
+    ll ans = 1;
+    while (b)
+    {
+        if (b % 2 == 1)
+            ans = (ans * a) % mod;
+        a = (a * a) % mod;
+        b /= 2;
+    }
+    return ans % mod;
+}
+int dfs(vector<vector<ll>> &egg, vector<ll> &vis, ll u, vector<ll> &path)
+{
+    vis[u] = 1;
+    path.push_back(u);
+    if (path.size() == vis.size() - 1)
+    {
+        return 1;
+    }
+    for (auto v : egg[u])
+    {
+        if (vis[v] == 0)
+        {
+            if (dfs(egg, vis, v, path) == 1)
+                return 1;
+        }
+    }
+    vis[u] = 0;
+    path.pop_back();
+    return 0;
+}
+int parent(int u, vector<ll> &par)
+{
+    if (par[u] == u)
+        return u;
+    par[u] = parent(par[u], par);
+    return par[u];
+}
+void union1(int u, int v, vector<ll> &par)
+{
+    int x = parent(u, par);
+    int y = parent(v, par);
+    if (x != y)
+        par[x] = y;
+    return;
+}
+
+void solve()
+{
+    ll n, a, b, x, y, k, c = mod, m1, m2, rr, cc;
+    string s1;
+    cin >> n;
+    ll ans = 0;
+    vector<ll> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    for (int i = 2; i <= 100; i++)
+    {
+        map<ll, ll> mp;
+        ll c = 0;
+        for (int j = 0; j < n; j++)
+        {
+
+            if (mp[i - arr[j]] > 0)
+            {
+                mp[i - arr[j]]--;
+                c++;
+            }
+            else
+            {
+                mp[arr[j]]++;
+            }
+        }
+        ans = max(ans, c);
+    }
+    cout << ans;
+    return;
+}
+int main()
+{
+    ll t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+        cout << "\n";
+    }
+    return 0;
+}
