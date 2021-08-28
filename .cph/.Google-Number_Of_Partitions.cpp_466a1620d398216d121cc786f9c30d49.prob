@@ -1,0 +1,1 @@
+{"name":"Local: Google-Number_Of_Partitions","url":"c:\\xampp\\htdocs\\DSA\\Google-Number_Of_Partitions.cpp","tests":[{"id":1630042056038,"input":"6\n-1 5 0 0 5 0","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\xampp\\htdocs\\DSA\\Google-Number_Of_Partitions.cpp","group":"local","local":true}
