@@ -2,6 +2,8 @@
     "files.associations": {
         "*.js": "javascript",
         "iostream": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
     }
 }
