@@ -1,0 +1,1 @@
+{"name":"Local: Minimum_Radius","url":"c:\\xampp\\htdocs\\DSA\\Minimum_Radius.cpp","tests":[{"id":1632201151986,"input":"1\n3 2\n0 1 2\n3 0 0\n2 1 2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\xampp\\htdocs\\DSA\\Minimum_Radius.cpp","group":"local","local":true}
