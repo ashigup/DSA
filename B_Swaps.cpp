@@ -4,6 +4,8 @@
 #define mod 1000000007
 using namespace std;
 #define vll vector<ll>
+#define pll pair<ll, ll>
+const ll INF = 1e18;
 ll modpow(ll a, ll b)
 {
     ll ans = 1;
@@ -28,21 +30,34 @@ void solve()
 {
     ll a, b, n, q, m, p, x, s, z, y, k, c = mod, m1, m2, rr, cc;
     string s1, s2;
-    cin >> n >> k;
-    ll ans = 0;
-    for (int zz = 1; zz <= n - 2; zz++)
+    cin >> n;
+    vll pos(2 * n);
+    for (int i = 0; i < n; i++)
     {
-        x = y = z = zz;
-        for (int a = 0; a <= n - zz - zz; a++)
+        cin >> a;
+        a--;
+        pos[a] = i;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a;
+        a--;
+        pos[a] = i;
+    }
+    ll ans = INF;
+    ll mn = INF;
+    for (ll i = 2 * n - 1; i >= 0; i--)
+    {
+        if (i % 2 == 0)
         {
-            y = zz + a;
-            x = n - zz - zz - a;
-            if (x >= y && (x - y - z) > k)
-            {
-                ans++;
-            }
+            ans = min(ans, mn + pos[i]);
+        }
+        else
+        {
+            mn = min(mn, pos[i]);
         }
     }
+
     cout << ans;
     return;
 }

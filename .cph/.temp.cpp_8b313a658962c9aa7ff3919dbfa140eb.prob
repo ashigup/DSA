@@ -1,1 +1,1 @@
-{"name":"Local: temp","url":"c:\\xampp\\htdocs\\DSA\\temp.cpp","tests":[{"id":1630474776280,"input":"3 4\n1 2 6\n1 3 2\n3 2 3\n1 3 4","output":"0 5 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\xampp\\htdocs\\DSA\\temp.cpp","group":"local","local":true}
+{"name":"Local: temp","url":"c:\\xampp\\htdocs\\DSA\\temp.cpp","tests":[{"id":1632567310150,"input":"1\n5\n3\n1 2 8 4 6\n5 15 5 2 9","output":"29"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\xampp\\htdocs\\DSA\\temp.cpp","group":"local","local":true}

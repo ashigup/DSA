@@ -26,24 +26,19 @@ bool comp1(vector<ll> a1, vector<ll> a2)
 
 void solve()
 {
-    ll a, b, n, q, m, p, x, s, z, y, k, c = mod, m1, m2, rr, cc;
+    ll a, b, n, q, m, p, x, s, y, k, c = mod, m1, m2, rr, cc;
     string s1, s2;
-    cin >> n >> k;
-    ll ans = 0;
-    for (int zz = 1; zz <= n - 2; zz++)
+    cin >> n >> q;
+    vector<vll> egg(n);
+    for (int i = 0; i < n; i++)
     {
-        x = y = z = zz;
-        for (int a = 0; a <= n - zz - zz; a++)
-        {
-            y = zz + a;
-            x = n - zz - zz - a;
-            if (x >= y && (x - y - z) > k)
-            {
-                ans++;
-            }
-        }
+        cin >> a;
+        egg[i].push_back(a);
     }
-    cout << ans;
+    while (q--)
+    {
+        cin >> x >> k;
+    }
     return;
 }
 int main()
@@ -51,7 +46,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     ll t = 1;
-    cin >> t;
+    //cin >> t;
     while (t--)
     {
         solve();
