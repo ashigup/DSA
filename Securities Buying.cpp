@@ -25,26 +25,27 @@ bool comp1(vector<ll> a1, vector<ll> a2)
 }
 void solve()
 {
-    ll n, a, b, x, y, k, c = mod, m1, m2, rr, cc;
+    ll n, a, zz, b, x, y, k, c = mod, m1, m2, rr, cc;
     string s1;
-    cin >> n;
-    vll arr(n);
-    for (int i = 0; i < n; i++)
-        cin >> arr[i];
-    vector<ll> dp(n, 0);
-    dp[0] = arr[0];
-    for (int i = 1; i < n; i++)
+    cin >> zz;
+    cin.ignore();
+    getline(cin, s1);
+    stringstream ss(s1);
+    vector<pair<ll, ll>> arr;
+    while (ss >> a)
     {
-        dp[i] = arr[i];
-        if (arr[i] > arr[i - 1])
-        {
-            dp[i]--;
-        }
+        arr.push_back({a, arr.size() + 1});
     }
-    c = 1;
+    n = arr.size();
+    sort(arr.begin(), arr.end());
+    c = 0;
     for (int i = 0; i < n; i++)
     {
-        c *= dp[i];
+        if (arr[i].first > zz)
+            break;
+        a = min(zz / arr[i].first, arr[i].second);
+        c += a;
+        zz -= a * arr[i].first;
     }
     cout << c;
     return;
@@ -52,11 +53,11 @@ void solve()
 int main()
 {
     ll t = 1;
-    //cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
-        cout << "\n";
+        // cout << "\n";
     }
     return 0;
 }
